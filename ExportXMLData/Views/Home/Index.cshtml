@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                XML data Extract
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h3>Text Input</h3>
+                        <div class="form-group">
+                            <textarea class="form-control" id="totalExpense" rows="8"></textarea>
+                        </div>
+                        <h3>Extracted Data</h3>
+                        <pre id="returnData"></pre>
+                        <div class="submitBtn">
+                            <button id="GetXML" type="submit" class="btn btn-primary">Get XML</button>
+                        </div>
+                        <div id="messageInfo" class="alert alert-primary" role="alert" style="visibility: hidden">
+                            Loading from API...
+                        </div>
+
+                    </div>
+                    <div class="col-lg-5">
+                        <h3>Expense Details</h3>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="col-sm-4">Total(Excluding GST)</th>
+                                    <td id="total"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GST</th>
+                                    <td id="gst"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Cost Centre</th>
+                                    <td id="costCentre"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>

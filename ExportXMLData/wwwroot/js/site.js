@@ -29,17 +29,21 @@ function getTotalCost(alltext) {
             if (result.xmlDataPair !=="") {              
                 obj = JSON.parse(result.xmlDataPair);
                 var jsonObject = JSON.stringify(obj.Result, undefined, 2);
-                $("#returnData").html(jsonObject);  
-                $('#total').html(result.totalExcludingGST);
-                $('#gst').html(result.gst);
-                $('#costCentre').html(result.costCentre);
+                $("#returnData").html(jsonObject); 
+                loadTable(result.totalExcludingGST, result.gst, result.costCentre);
             }
             else {
                 $("#returnData").html(result.error); 
-                $("#expenseInfo").html("");
+                loadTable("","","");
             }
         }
     }).done(function () {       
         searchRunning = false;
     });
+}
+
+function loadTable(total, gst, centre) {
+    $('#total').html(total);
+    $('#gst').html(gst);
+    $('#costCentre').html(centre);
 }
